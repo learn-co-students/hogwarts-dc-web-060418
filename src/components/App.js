@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Nav from './Nav'
-import hogs from '../porkers_data';
+// import hogs from '../porkers_data';
+import Body from './Body'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          < Nav />
-
+        < Nav />
+        < Body />
       </div>
     )
   }
