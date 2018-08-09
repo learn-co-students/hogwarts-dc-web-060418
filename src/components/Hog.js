@@ -33,12 +33,13 @@ class Hog extends Component {
     let returnValue
     if (this.state.hidden === true) {
       returnValue = null
-    } else {
+    } else if (this.props.hog.gif){
       returnValue = (
         <div className="ui centered card">
           <div className="image">
             <img
-              src={require(`../hog-imgs/${this.props.hog.name.toLowerCase().split(" ").join("_")}.jpg`)}
+
+              src={this.props.hog.gif.images.original.url}
               alt={this.props.hog.name}>
             </img>
           </div>
@@ -58,6 +59,8 @@ class Hog extends Component {
           </div>
         </div>
       )
+    } else {
+      returnValue = null
     }
     return returnValue
   }
@@ -70,8 +73,5 @@ class Hog extends Component {
 }
 
 export default Hog
-
-// <div class="extra content">
-//   <button class="ui button">Hog Details</button>
-//   <button class="ui button">Hide Hog</button>
-// </div>
+// src={this.props.hog.gif.images.original.url}
+// src={require(`../hog-imgs/${this.props.hog.name.toLowerCase().split(" ").join("_")}.jpg`)}
